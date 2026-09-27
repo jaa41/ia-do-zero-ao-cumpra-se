@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IA do Zero ao Cumpra-se | Jorge Araujo</title>
+<meta name="description" content="Curso online de IA para profissionais do Direito que ainda não usam a ferramenta. 17 aulas curtas e práticas, do primeiro comando à minuta revisada. R$ 99 ou 3x de R$ 33.">
+<meta property="og:title" content="IA do Zero ao Cumpra-se">
+<meta property="og:description" content="Aprenda IA desde o zero, com um juiz do trabalho. Curso online, R$ 99.">
+<meta property="og:image" content="retrato.jpg">
+<!-- Tag do Google Ads: colar aqui o trecho gtag.js da conta quando a conversão for criada. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,500&family=Montserrat:wght@500;600;800;900&display=swap" rel="stylesheet">
+<style>
+  /* Paleta e fontes do brand sheet "Jorge Araujo | IA para o Direito". */
+  :root {
+    --laranja: #f15a0a;
+    --laranja-forte: #d24c05;
+    --preto: #121417;
+    --marfim: #ece2d8;
+    --marfim-claro: #f6f1eb;
+    --ardosia: #354256;
+    --taupe: #a1816f;
+    --cinza: #c4bbb5;
+    --texto: #2a2f38;
+    --suave: #5a6170;
+    --titulo: "Montserrat", "Segoe UI", system-ui, sans-serif;
+    --assinatura: "Cormorant Garamond", Georgia, serif;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0; background: var(--marfim-claro); color: var(--texto);
+    font-family: var(--titulo); font-weight: 500; font-size: 17px; line-height: 1.65;
+  }
+  img { max-width: 100%; display: block; }
+  .miolo { max-width: 1080px; margin: 0 auto; padding-inline: 16px; }
+  .estreito { max-width: 700px; }
+  h1, h2, h3 { color: var(--preto); text-wrap: balance; margin: 0; }
+  h2 { font-size: clamp(25px, 3.6vw, 34px); font-weight: 800; letter-spacing: -.015em; line-height: 1.18; }
+  p { margin: 0; }
+  a:focus-visible { outline: 3px solid var(--laranja); outline-offset: 3px; }
+  .rotulo {
+    font-size: 13px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: var(--laranja);
+  }
+
+  .botao {
+    display: inline-block; background: var(--laranja); color: #fff; text-decoration: none;
+    font-weight: 800; font-size: 18px; letter-spacing: .01em;
+    padding: 17px 32px; border-radius: 10px; transition: background .15s, transform .15s;
+  }
+  .botao:hover { background: var(--laranja-forte); transform: translateY(-1px); }
+
+  /* Abertura: título à esquerda, retrato à direita, horizonte baixo. */
+  .abertura { background: var(--marfim); overflow: hidden; }
+  .topo { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding-block: 22px; }
+  .marca { font-weight: 900; color: var(--preto); font-size: 17px; }
+  .marca span { color: var(--laranja); }
+  .topo a {
+    color: var(--preto); font-weight: 600; font-size: 14px; text-decoration: none;
+    border: 2px solid var(--laranja); padding: 7px 14px; border-radius: 8px;
+  }
+  .heroi {
+    display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, .9fr); gap: 40px; align-items: end;
+  }
+  .heroi .texto { padding-block: 36px 72px; }
+  .heroi h1 {
+    font-size: clamp(42px, 7.2vw, 80px); font-weight: 900; line-height: 1; letter-spacing: -.03em;
+    margin-block: 14px 8px;
+  }
+  .heroi h1 em { font-style: normal; color: var(--laranja); }
+  .de-jorge { font-family: var(--assinatura); font-style: italic; font-size: 26px; color: var(--ardosia); margin-bottom: 20px; }
+  .chamada { font-size: 19px; color: var(--suave); max-width: 36ch; }
+  .fichas { display: flex; flex-wrap: wrap; gap: 8px 20px; margin-block: 22px 30px; font-size: 15px; font-weight: 600; color: var(--ardosia); }
+  .fichas span::before { content: "✓ "; color: var(--laranja); }
+  .preco { margin-top: 12px; font-size: 15px; color: var(--suave); }
+  .preco strong { color: var(--preto); }
+
+  .retrato { position: relative; align-self: end; }
+  .retrato img {
+    width: 100%; max-width: 420px; margin-left: auto; aspect-ratio: 440 / 600; object-fit: cover;
+    border-radius: 14px 14px 0 0; border: 3px solid var(--laranja); border-bottom: 0;
+  }
+  .retrato .legenda {
+    position: absolute; left: 0; bottom: 34px; background: var(--preto); color: var(--marfim);
+    font-size: 13px; line-height: 1.4; padding: 10px 14px; border-radius: 8px; max-width: 230px;
+  }
+  .retrato .legenda b { color: #fff; display: block; font-size: 14px; }
+  .carimbo {
+    position: absolute; right: -6px; top: 26px;
+    font-weight: 900; font-size: 22px; letter-spacing: .1em; color: var(--laranja);
+    border: 3px solid var(--laranja); border-radius: 6px; padding: 2px 12px;
+    background: rgba(246, 241, 235, .9); transform: rotate(8deg);
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .carimbo { animation: carimbar .5s cubic-bezier(.3, 1.6, .5, 1) .6s both; }
+    @keyframes carimbar { from { transform: rotate(8deg) scale(1.8); opacity: .2; } to { transform: rotate(8deg) scale(1); opacity: 1; } }
+  }
+
+  section { padding-block: 64px; }
+  section + section { border-top: 1px solid var(--cinza); }
+  .pilha { display: flex; flex-direction: column; gap: 16px; }
+
+  .percurso { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; margin-top: 32px; }
+  .passo { background: #fff; border: 1.5px solid var(--laranja); border-radius: 12px; padding: 20px; }
+  .passo .n { font-weight: 900; color: var(--laranja); font-size: 14px; letter-spacing: .1em; }
+  .passo h3 { font-size: 18px; font-weight: 800; margin-block: 4px 6px; }
+  .passo p { font-size: 15px; color: var(--suave); }
+  .nota { margin-top: 26px; color: var(--suave); }
+  .nota strong { color: var(--preto); }
+
+  .duas { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 56px; }
+  .lista { list-style: none; padding: 0; margin: 20px 0 0; display: flex; flex-direction: column; gap: 10px; }
+  .lista li { padding-left: 26px; position: relative; }
+  .lista li::before { content: "→"; position: absolute; left: 0; color: var(--laranja); font-weight: 800; }
+  .autor p + p { margin-top: 12px; }
+  .autor .pilha { margin-top: 20px; }
+
+  /* Faixa escura para benefícios e CTA. */
+  .oferta { background: var(--preto); color: var(--marfim); border-top: 0 !important; }
+  .oferta h2 { color: #fff; }
+  .oferta .caixa { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 48px; align-items: center; }
+  .oferta ul { color: var(--cinza); margin: 18px 0 0; padding-left: 20px; }
+  .oferta li + li { margin-top: 6px; }
+  .valor-bloco { text-align: center; border: 2px solid var(--laranja); border-radius: 14px; padding: 30px 34px; }
+  .valor { font-weight: 900; font-size: 68px; line-height: 1; color: #fff; font-variant-numeric: tabular-nums; }
+  .valor small { font-size: 26px; vertical-align: top; margin-right: 4px; }
+  .parcelas { color: var(--cinza); margin-block: 10px 24px; font-size: 15px; }
+  .garantia { color: var(--cinza); font-size: 13px; margin-top: 14px; }
+
+  details { border-bottom: 1px solid var(--cinza); padding-block: 14px; }
+  summary { cursor: pointer; font-weight: 700; color: var(--preto); }
+  details p { margin-top: 10px; color: var(--suave); }
+
+  footer { background: var(--ardosia); color: var(--marfim); font-size: 13px; padding-block: 26px; }
+
+  @media (max-width: 860px) {
+    .heroi { grid-template-columns: 1fr; gap: 0; }
+    .heroi .texto { padding-block: 16px 36px; }
+    .retrato img { margin-inline: auto; max-width: 340px; }
+    .retrato .legenda { left: 50%; transform: translateX(-190px); }
+    .percurso { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .duas, .oferta .caixa { grid-template-columns: 1fr; gap: 36px; }
+  }
+  @media (max-width: 480px) {
+    .percurso { grid-template-columns: 1fr; }
+    .topo a { display: none; }
+    .retrato .legenda { left: 0; transform: none; bottom: 18px; }
+    .carimbo { right: 0; font-size: 18px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="abertura">
+  <div class="miolo">
+    <div class="topo">
+      <div class="marca">IA do Zero ao <span>Cumpra-se</span></div>
+      <a href="#oferta">Ver a oferta</a>
+    </div>
+
+    <div class="heroi">
+      <div class="texto">
+        <div class="rotulo">Curso online para profissionais do Direito</div>
+        <h1>Aprenda IA <em>desde o zero.</em></h1>
+        <div class="de-jorge">de Jorge Araujo</div>
+        <p class="chamada">Do primeiro comando ao trabalho jurídico: aprenda a conversar, orientar e revisar a inteligência artificial com clareza e responsabilidade.</p>
+        <div class="fichas">
+          <span>Sem conhecimento técnico</span>
+          <span>Aulas de 5 a 10 minutos</span>
+          <span>No seu ritmo</span>
+        </div>
+        <a class="botao" href="https://pay.hotmart.com/Y107055243I?off=nipv33p8">Quero começar agora</a>
+        <div class="preco"><strong>R$ 99</strong> à vista ou 3x de R$ 33 sem juros</div>
+      </div>
+
+      <div class="retrato">
+        <img src="retrato.jpg" alt="Retrato de Jorge Araujo, de terno escuro" width="440" height="600">
+        <div class="carimbo">CUMPRA-SE</div>
+        <div class="legenda"><b>Jorge Alberto Araujo</b>Juiz do Trabalho Titular · TRT da 4ª Região</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="miolo">
+    <div class="estreito pilha">
+      <div class="rotulo">Para quem é</div>
+      <h2>Para quem ainda não usa IA, ou tentou e desistiu</h2>
+      <p>O curso é para advogados, magistrados, servidores e assessores que nunca usaram IA generativa ou que se frustraram com respostas genéricas. Você não precisa saber nada de tecnologia para começar.</p>
+    </div>
+
+    <div class="percurso">
+      <div class="passo"><div class="n">PASSO 1</div><h3>Experimentar</h3><p>Da primeira conversa até o hábito de refinar o pedido.</p></div>
+      <div class="passo"><div class="n">PASSO 2</div><h3>Orientar</h3><p>Papel, formato, exemplo, contexto e o pedido completo.</p></div>
+      <div class="passo"><div class="n">PASSO 3</div><h3>Conhecer o ambiente</h3><p>Assistentes, anexo de documentos e recursos avançados.</p></div>
+      <div class="passo"><div class="n">PASSO 4</div><h3>Levar ao trabalho</h3><p>Um caso fictício, do planejamento à minuta de despacho revisada.</p></div>
+    </div>
+    <p class="nota"><strong>17 aulas objetivas</strong>, mais dois vídeos de abertura e um epílogo. Cada aula traz vídeo, texto de apoio, demonstração de tela e uma atividade prática.</p>
+  </div>
+</section>
+
+<section>
+  <div class="miolo duas">
+    <div>
+      <h2>O que você vai saber fazer</h2>
+      <ul class="lista">
+        <li>conduzir conversas com ferramentas de IA generativa;</li>
+        <li>transformar respostas genéricas em respostas úteis;</li>
+        <li>escrever instruções com papel, contexto, formato, restrição e critério;</li>
+        <li>criar assistentes para tarefas que se repetem;</li>
+        <li>anexar documentos e pedir resumos e análises com recorte;</li>
+        <li>construir e revisar uma minuta de despacho simples;</li>
+        <li>decidir com segurança sobre sigilo, LGPD e limites da ferramenta.</li>
+      </ul>
+    </div>
+    <div class="autor">
+      <h2>Quem ensina</h2>
+      <div class="pilha">
+        <p><strong>Jorge Alberto Araujo</strong> é Juiz do Trabalho Titular na 5ª Vara do Trabalho de Porto Alegre (TRT da 4ª Região), mestre em Teoria da Argumentação Jurídica pela Universidad de Alicante, formador de formadores na ENAMAT e autor de <em>Interrogatório Eficaz</em> (Éthala, 2ª edição).</p>
+        <p>O curso nasceu da prática de quem lê petições e escreve decisões todos os dias, e ensina a usar a IA como apoio, sempre sob a supervisão de quem assina.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="oferta" id="oferta">
+  <div class="miolo caixa">
+    <div>
+      <div class="rotulo">A oferta</div>
+      <h2 style="margin-top:10px">Tudo o que está incluso</h2>
+      <ul>
+        <li>as 17 aulas em vídeo, com abertura e epílogo;</li>
+        <li>biblioteca de prompts jurídicos prontos para adaptar;</li>
+        <li>checklist de segurança e LGPD;</li>
+        <li>Caderno de Experiências para acompanhar a sua evolução;</li>
+        <li>12 meses de atualizações: novas aulas, prompts e novidades das ferramentas.</li>
+      </ul>
+    </div>
+    <div class="valor-bloco">
+      <div class="valor"><small>R$</small>99</div>
+      <div class="parcelas">ou 3x de R$ 33 sem juros<br>Pix, boleto ou cartão</div>
+      <a class="botao" href="https://pay.hotmart.com/Y107055243I?off=nipv33p8">Quero começar agora</a>
+      <div class="garantia">Garantia de 7 dias pela Hotmart</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="miolo estreito">
+    <h2>Perguntas frequentes</h2>
+    <div style="margin-top:12px">
+      <details><summary>Preciso saber algo de tecnologia?</summary>
+        <p>Não. O curso começa pela primeira conversa com a ferramenta e avança aos poucos.</p></details>
+      <details><summary>O curso tem encontros ao vivo?</summary>
+        <p>Não. O curso é totalmente gravado: você assiste quando quiser, no seu ritmo.</p></details>
+      <details><summary>Preciso assinar alguma ferramenta de IA?</summary>
+        <p>Não para começar. As práticas podem ser iniciadas nas versões gratuitas das ferramentas.</p></details>
+      <details><summary>Posso colocar dados de processos na IA?</summary>
+        <p>O curso ensina o que nunca colar e como anonimizar antes, com um checklist de segurança e LGPD.</p></details>
+      <details><summary>Vou sair especialista em IA?</summary>
+        <p>Não é essa a promessa. O objetivo é tirar o receio inicial, ensinar a lógica prática da interação e deixar você seguro para usar a ferramenta como apoio ao trabalho jurídico.</p></details>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="miolo">© 2026 Jorge Araujo · IA do Zero ao Cumpra-se · Pagamento processado pela Hotmart</div>
+</footer>
+
+</body>
+</html>
