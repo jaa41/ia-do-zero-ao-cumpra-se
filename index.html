@@ -11,7 +11,7 @@
 <!-- Tag do Google Ads: colar aqui o trecho gtag.js da conta quando a conversão for criada. -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,500&family=Montserrat:wght@500;600;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,500&family=Montserrat:wght@500;600;800;900&family=Special+Elite&display=swap" rel="stylesheet">
 <style>
   /* Paleta e fontes do brand sheet "Jorge Araujo | IA para o Direito". */
   :root {
@@ -27,6 +27,7 @@
     --suave: #5a6170;
     --titulo: "Montserrat", "Segoe UI", system-ui, sans-serif;
     --assinatura: "Cormorant Garamond", Georgia, serif;
+    --maquina: "Special Elite", "Courier New", monospace;
   }
   * { box-sizing: border-box; }
   html { scroll-behavior: smooth; }
@@ -77,26 +78,40 @@
   .preco { margin-top: 12px; font-size: 15px; color: var(--suave); }
   .preco strong { color: var(--preto); }
 
-  .retrato { position: relative; align-self: end; }
-  .retrato img {
-    width: 100%; max-width: 250px; margin-left: auto; height: auto;
-    border-radius: 14px 14px 0 0; border: 3px solid var(--laranja); border-bottom: 0;
+  /* Quadro 4:5: retrato inteiro à direita, a minuta com o carimbo à esquerda. */
+  .quadro {
+    position: relative; width: 100%; max-width: 460px; margin: 28px 0 40px auto; aspect-ratio: 4 / 5;
+    border: 3px solid var(--laranja); border-radius: 16px; overflow: hidden;
+    background: linear-gradient(160deg, #e4e0db 0%, #cdc8c2 100%);
   }
-  .retrato .legenda {
-    position: absolute; left: 0; bottom: 34px; background: var(--preto); color: var(--marfim);
-    font-size: 13px; line-height: 1.4; padding: 10px 14px; border-radius: 8px; max-width: 230px;
+  .quadro .foto {
+    position: absolute; right: 0; bottom: 0; height: 100%; width: auto; max-width: none;
+    -webkit-mask-image: linear-gradient(to right, transparent 0, #000 40px);
+    mask-image: linear-gradient(to right, transparent 0, #000 40px);
   }
-  .retrato .legenda b { color: #fff; display: block; font-size: 14px; }
+  .papel {
+    position: absolute; left: 6%; top: 9%; width: 57%;
+    background: #fffdf8; color: #2a2f38; border-radius: 3px;
+    padding: 16px 16px 50px; font-family: var(--maquina); font-size: clamp(11px, 2.8vw, 13.5px); line-height: 1.6;
+    box-shadow: 0 16px 34px -14px rgba(18, 20, 23, .55); transform: rotate(-3deg);
+  }
+  .papel .cab { font-size: .82em; color: #6b6f78; border-bottom: 1px dashed #d9d2c8; padding-bottom: 8px; margin-bottom: 10px; }
+  .papel p + p { margin-top: 8px; }
   .carimbo {
-    position: absolute; right: -6px; top: 26px;
-    font-weight: 900; font-size: 22px; letter-spacing: .1em; color: var(--laranja);
-    border: 3px solid var(--laranja); border-radius: 6px; padding: 2px 12px;
-    background: rgba(246, 241, 235, .9); transform: rotate(8deg);
+    position: absolute; right: 12px; bottom: 12px;
+    font-family: var(--titulo); font-weight: 900; font-size: clamp(15px, 4vw, 20px); letter-spacing: .1em;
+    color: var(--laranja-forte); border: 3px solid var(--laranja-forte); border-radius: 6px;
+    padding: 1px 10px; transform: rotate(-9deg); opacity: .9;
   }
   @media (prefers-reduced-motion: no-preference) {
     .carimbo { animation: carimbar .5s cubic-bezier(.3, 1.6, .5, 1) .6s both; }
-    @keyframes carimbar { from { transform: rotate(8deg) scale(1.8); opacity: .2; } to { transform: rotate(8deg) scale(1); opacity: 1; } }
+    @keyframes carimbar { from { transform: rotate(-9deg) scale(1.9); opacity: .15; } to { transform: rotate(-9deg) scale(1); opacity: .9; } }
   }
+  .quadro .legenda {
+    position: absolute; left: 6%; bottom: 6%; background: var(--preto); color: var(--marfim);
+    font-size: 13px; line-height: 1.4; padding: 10px 14px; border-radius: 8px;
+  }
+  .quadro .legenda b { color: #fff; display: block; font-size: 14px; }
 
   section { padding-block: 64px; }
   section + section { border-top: 1px solid var(--cinza); }
@@ -138,16 +153,13 @@
   @media (max-width: 860px) {
     .heroi { grid-template-columns: 1fr; gap: 0; }
     .heroi .texto { padding-block: 16px 36px; }
-    .retrato img { margin-inline: auto; max-width: 220px; }
-    .retrato .legenda { left: 50%; transform: translateX(-200px); }
+    .quadro { margin: 8px auto 40px; max-width: 420px; }
     .percurso { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .duas, .oferta .caixa { grid-template-columns: 1fr; gap: 36px; }
   }
   @media (max-width: 480px) {
     .percurso { grid-template-columns: 1fr; }
     .topo a { display: none; }
-    .retrato .legenda { left: 0; transform: none; bottom: 18px; }
-    .carimbo { right: 0; font-size: 18px; }
   }
 </style>
 </head>
@@ -175,9 +187,15 @@
         <div class="preco"><strong>R$ 99</strong> à vista ou 3x de R$ 33 sem juros</div>
       </div>
 
-      <div class="retrato">
-        <img src="retrato-inteiro.jpg" alt="Retrato de Jorge Araujo, de terno escuro" width="440" height="1116">
-        <div class="carimbo">CUMPRA-SE</div>
+      <div class="quadro">
+        <img class="foto" src="retrato-inteiro.jpg" alt="Jorge Araujo, de terno escuro, com as mãos cruzadas" width="440" height="1116">
+        <div class="papel" aria-label="Exemplo de minuta de despacho, a tarefa final do curso">
+          <div class="cab">Caso fictício do curso · Minuta revisada</div>
+          <p>Vistos.</p>
+          <p>Recebido o laudo pericial contábil, intimem-se as partes para manifestação no prazo comum de 8 dias.</p>
+          <p>Após, voltem conclusos.</p>
+          <div class="carimbo">CUMPRA-SE</div>
+        </div>
         <div class="legenda"><b>Jorge Alberto Araujo</b>Instrutor do curso</div>
       </div>
     </div>
