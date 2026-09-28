@@ -7,7 +7,7 @@
 <meta name="description" content="Curso online de IA para profissionais do Direito que ainda não usam a ferramenta. 17 aulas curtas e práticas, do primeiro comando à minuta revisada. R$ 99 ou 3x de R$ 33.">
 <meta property="og:title" content="IA do Zero ao Cumpra-se">
 <meta property="og:description" content="Aprenda IA desde o zero, sem conhecimento técnico. Curso online, R$ 99.">
-<meta property="og:image" content="retrato-inteiro.jpg">
+<meta property="og:image" content="retrato-instrutor.jpg">
 <!-- Tag do Google Ads: colar aqui o trecho gtag.js da conta quando a conversão for criada. -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -78,17 +78,16 @@
   .preco { margin-top: 12px; font-size: 15px; color: var(--suave); }
   .preco strong { color: var(--preto); }
 
-  /* Quadro 4:5: retrato inteiro à direita; legenda no alto e minuta com o carimbo embaixo, à esquerda. */
+  /* Quadro 4:5: retrato do instrutor; legenda no alto e minuta com o carimbo saindo pelo canto de baixo, à esquerda. */
   .quadro {
-    position: relative; width: 100%; max-width: 480px; margin: 28px 0 40px auto; aspect-ratio: 4 / 5;
-    border: 3px solid var(--laranja); border-radius: 16px; overflow: hidden;
-    background: linear-gradient(160deg, #e4e0db 0%, #cdc8c2 100%);
+    position: relative; width: 100%; max-width: 460px; margin: 28px 0 56px auto; aspect-ratio: 4 / 5;
   }
   .quadro .foto {
-    position: absolute; right: 0; bottom: 0; height: 100%; width: auto; max-width: none;
+    position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; background: #fff;
+    border: 3px solid var(--laranja); border-radius: 16px;
   }
   .papel {
-    position: absolute; left: 4%; bottom: 6%; width: 45%;
+    position: absolute; left: -8%; bottom: -7%; width: 44%;
     background: #fffdf8; color: #2a2f38; border-radius: 3px;
     padding: 14px 14px 60px; font-family: var(--maquina); font-size: clamp(10px, 2.6vw, 13px); line-height: 1.55;
     box-shadow: 0 16px 34px -14px rgba(18, 20, 23, .55); transform: rotate(-3deg);
@@ -106,7 +105,7 @@
     @keyframes carimbar { from { transform: rotate(-9deg) scale(1.9); opacity: .15; } to { transform: rotate(-9deg) scale(1); opacity: .9; } }
   }
   .quadro .legenda {
-    position: absolute; left: 4%; top: 6%; background: var(--preto); color: var(--marfim);
+    position: absolute; left: 5%; top: 5%; background: var(--preto); color: var(--marfim);
     font-size: 13px; line-height: 1.4; padding: 10px 14px; border-radius: 8px;
   }
   .quadro .legenda b { color: #fff; display: block; font-size: 14px; }
@@ -151,7 +150,8 @@
   @media (max-width: 860px) {
     .heroi { grid-template-columns: 1fr; gap: 0; }
     .heroi .texto { padding-block: 16px 36px; }
-    .quadro { margin: 8px auto 40px; max-width: 420px; }
+    .quadro { margin: 8px auto 56px; max-width: 420px; }
+    .papel { left: 3%; bottom: -5%; }
     .percurso { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .duas, .oferta .caixa { grid-template-columns: 1fr; gap: 36px; }
   }
@@ -186,7 +186,7 @@
       </div>
 
       <div class="quadro">
-        <img class="foto" src="retrato-inteiro.jpg" alt="Jorge Araujo, de terno escuro, com as mãos cruzadas" width="440" height="1116">
+        <img class="foto" src="retrato-instrutor.jpg" alt="Jorge Araujo sorrindo, de blazer azul-marinho e braços cruzados" width="800" height="1000">
         <div class="papel" aria-label="Exemplo de minuta de despacho, a tarefa final do curso">
           <div class="cab">Caso fictício do curso · Minuta revisada</div>
           <p>Vistos.</p>
