@@ -8,7 +8,15 @@
 <meta property="og:title" content="IA do Zero ao Cumpra-se">
 <meta property="og:description" content="Aprenda IA desde o zero, sem conhecimento técnico. Curso online, R$ 99.">
 <meta property="og:image" content="retrato-instrutor.jpg">
-<!-- Tag do Google Ads: colar aqui o trecho gtag.js da conta quando a conversão for criada. -->
+<!-- Tag do Google Ads (conta Ingrid PJ). O linker leva o clique do anúncio até o checkout
+     da Hotmart, onde o pixel da Hotmart registra a conversão "Compra - IA do Zero (Hotmart)". -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-1060449298"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-1060449298', { linker: { domains: ['pay.hotmart.com'] } });
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,500&family=Montserrat:wght@500;600;800;900&family=Special+Elite&display=swap" rel="stylesheet">
@@ -285,6 +293,22 @@
 <footer>
   <div class="miolo">© 2026 Jorge Araujo · IA do Zero ao Cumpra-se · Pagamento processado pela Hotmart</div>
 </footer>
+
+<script>
+  // Repassa ao checkout o gclid e as UTMs do anúncio, e marca a origem para os relatórios da Hotmart.
+  (function () {
+    var q = new URLSearchParams(location.search);
+    var extra = new URLSearchParams();
+    ['gclid', 'gbraid', 'wbraid', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content']
+      .forEach(function (k) { if (q.get(k)) extra.set(k, q.get(k)); });
+    extra.set('src', q.get('gclid') ? 'googleads' : 'pagina');
+    document.querySelectorAll('a[href^="https://pay.hotmart.com/"]').forEach(function (a) {
+      var u = new URL(a.href);
+      extra.forEach(function (v, k) { u.searchParams.set(k, v); });
+      a.href = u.toString();
+    });
+  })();
+</script>
 
 </body>
 </html>
