@@ -78,7 +78,7 @@
   .preco { margin-top: 12px; font-size: 15px; color: var(--suave); }
   .preco strong { color: var(--preto); }
 
-  /* Quadro 4:5: retrato inteiro à direita, a minuta com o carimbo à esquerda. */
+  /* Quadro 4:5: retrato inteiro à direita; legenda no alto e minuta com o carimbo embaixo, à esquerda. */
   .quadro {
     position: relative; width: 100%; max-width: 480px; margin: 28px 0 40px auto; aspect-ratio: 4 / 5;
     border: 3px solid var(--laranja); border-radius: 16px; overflow: hidden;
@@ -86,11 +86,9 @@
   }
   .quadro .foto {
     position: absolute; right: 0; bottom: 0; height: 100%; width: auto; max-width: none;
-    -webkit-mask-image: linear-gradient(to right, transparent 0, #000 40px);
-    mask-image: linear-gradient(to right, transparent 0, #000 40px);
   }
   .papel {
-    position: absolute; left: 4%; top: 7%; width: 45%;
+    position: absolute; left: 4%; bottom: 6%; width: 45%;
     background: #fffdf8; color: #2a2f38; border-radius: 3px;
     padding: 14px 14px 60px; font-family: var(--maquina); font-size: clamp(10px, 2.6vw, 13px); line-height: 1.55;
     box-shadow: 0 16px 34px -14px rgba(18, 20, 23, .55); transform: rotate(-3deg);
@@ -108,7 +106,7 @@
     @keyframes carimbar { from { transform: rotate(-9deg) scale(1.9); opacity: .15; } to { transform: rotate(-9deg) scale(1); opacity: .9; } }
   }
   .quadro .legenda {
-    position: absolute; left: 4%; bottom: 5%; background: var(--preto); color: var(--marfim);
+    position: absolute; left: 4%; top: 6%; background: var(--preto); color: var(--marfim);
     font-size: 13px; line-height: 1.4; padding: 10px 14px; border-radius: 8px;
   }
   .quadro .legenda b { color: #fff; display: block; font-size: 14px; }
